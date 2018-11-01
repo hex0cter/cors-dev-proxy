@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/hex0cter/cors-dev-proxy/issues"
   },
-  "homepage": "https://github.com/hex0cter/cors-dev-proxy#readme"
+  "homepage": "https://github.com/hex0cter/cors-dev-proxy#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
