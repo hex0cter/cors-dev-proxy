@@ -7,11 +7,11 @@ const urlUtils = require('./utils/url')
 
 const port = 4000
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, klarna-correlation-id");
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
   next()
-});
+})
 
 app.all('/*', async (req, res, next) => {
   console.log('===================================================')
@@ -21,7 +21,7 @@ app.all('/*', async (req, res, next) => {
   const requestMethod = req.method
   console.log(`${requestMethod} ${destinationUrl}`)
 
-  if (! urlUtils.isUrl (destinationUrl)) {
+  if (!urlUtils.isUrl(destinationUrl)) {
     console.log(`${destinationUrl} is not a valid url`)
     next()
     return
@@ -30,14 +30,14 @@ app.all('/*', async (req, res, next) => {
   const url = new URL(destinationUrl)
   console.log('host', url.hostname)
 
-  const headers = {...req.headers, host: url.hostname }
+  const headers = { ...req.headers, host: url.hostname }
   console.log('headers', headers)
 
   const response = await fetch(destinationUrl, {
     method: requestMethod,
     headers: headers
-  });
-  const body = await response.text();
+  })
+  const body = await response.text()
   console.log('return text', body)
 
   res.send(body)
