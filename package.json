@@ -1,0 +1,23 @@
+{
+  "name": "cors-dev-proxy",
+  "version": "1.0.0",
+  "description": "A development proxy allow user to send any request without worrying about CORS.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hex0cter/cors-dev-proxy.git"
+  },
+  "keywords": [
+    "CORS",
+    "proxy"
+  ],
+  "author": "Daniel Han <hex0cter@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hex0cter/cors-dev-proxy/issues"
+  },
+  "homepage": "https://github.com/hex0cter/cors-dev-proxy#readme"
+}
